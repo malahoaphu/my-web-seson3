@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .login-button {
+            background-color: rgb(33, 236, 50);
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu {
+            width: 100%;
+            height: auto;
+            background-color: yellow;
+            font-size: 50px;
+        }
+        .banner {
+            width: 100%;
+            height: 100px;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .logo{
+            width: 130px;
+            height: 70px;
+            border-radius: 17px;
+        }
+        .search-box{
+            width: 380px;
+            height: 40px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-button {
+            position: absolute;
+            width: 70px;
+            height: 42px;
+            top: 21px;
+            right: 0px;
+            border-radius: 25px;
+            background-color: red;
+        }
+        .info{
+            font-size: 20px;
+        }
+        .footer{
+            text-align: center;
+            background-color: yellow;
+        }
+        .google-login {
+            display: inline-block;
+        }
+        .google-login .logo {
+            background-color: white;
+            float: left;
+            padding: 15px;
+        }
+        .google-login .text {
+            background-color: blue;
+            color: white;
+            float: left;
+            padding: 15px 32px;
+            font-size: 16px;
+        }
+        .login-btn {
+            background-color: pink;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .login{
+            border: 1px solid purple;
+            width: 400px;
+            height: 450px;
+            margin: auto;
+            text-align: center;
+            background-color: rgb(245, 245, 27);
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-radius: 10px
+        }
+        .textdangnhap{
+            font-family: 'Pacifico', cursive;
+            color: rgb(247, 9, 155);
+            font-size: 30px;
+        }
+        .login-content{
+            font-family: 'Pacifico', cursive;
+        }
+        .dangnhap{
+            width: 200px;
+            height: 30px;
+            border-radius: 15px;
+            font-size: 18px;
+            background-color: red;
+            color: azure;
+            cursor: pointer;
+        }
+        .input-login{
+            width: 200px;
+            height: 25px;
+            background-color: rgb(53, 236, 29);
+            border-radius: 1rem;
+        }
+        .end-login{
+            text-align: left;
+        }
+        .end2-login{
+            text-align: right;
+        }
+        .footer-login{
+            margin-top: 20px;
+            display: flex;
+            gap: 150px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function quenpass(){
+            alert("Bạn đã nhớ lại mật khẩu")
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img class="banner" src="anh/banner.jpg" alt="Banner">
+        <div class="menu">
+            <div class="menu-container">
+                <img class="logo" src="anh/logo.jpg" alt="Logo">
+                 <a href="index.html"><i class="fa fa-home"></i></a>
+                <div class="search-container">
+                    <input class="search-box" type="text" placeholder="Tìm kiếm...">
+                     <button class="search-button"><i class="fa fa-search"></i></button>
+                </div>
+               <a href="Login.html"><button class="login-button">Đăng nhập/Đăng ký</button></a>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <a href="ThongTinSinhVien.html"><i class="fa fa-user"></i><span class="info">Thông tin sinh viên</span></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="login">
+        <p class="textdangnhap">Đăng nhập</p>
+        <p>---------oOo---------</p>
+        <div class="login-content">
+            <p>Tài khoản</p>
+            <input class="input-login" type="text" placeholder="Số điện thoại hoặc tài khoản">
+            <p>Mật khẩu</p>
+            <input class="input-login" type="password"> <br> <br>
+            <a href="#"><button class="dangnhap">Đăng nhập</button></a>
+        </div>
+        <div class="footer-login">
+            <div><a href="register.html"><font color="red"><u>Bạn chưa có tài khoản?</u></font></a></div>
+            <div><a href="#" onclick="quenpass()"> <font color="red"><u>Quên mật khẩu</u></font></a></div>
+        </div>
+       
+    </div>
+
+    <div class="footer">
+        <h4>Địa chỉ: 170, Lê Trọng Tấn, Tây Thạnh, Tân Phú</h4>
+        <p><b>Tổng đài hỗ trợ </b><i>(miễn phí)</i></p>
+        <p><b>Số điện thoại:</b> 08071133269</p>
+    </div>
+    </body>
+</html>

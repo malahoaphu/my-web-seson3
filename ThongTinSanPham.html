@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .login-button {
+            background-color: rgb(33, 236, 50);
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu {
+            width: 100%;
+            height: auto;
+            background-color: yellow;
+            font-size: 50px;
+        }
+        .banner {
+            width: 100%;
+            height: 100px;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .logo{
+            width: 130px;
+            height: 70px;
+            border-radius: 17px;
+        }
+        .search-box{
+            width: 380px;
+            height: 40px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-button {
+            position: absolute;
+            width: 70px;
+            height: 42px;
+            top: 21px;
+            right: 0px;
+            border-radius: 25px;
+            background-color: red;
+        }
+        .info{
+            font-size: 20px;
+        }
+        .footer{
+            text-align: center;
+            background-color: yellow;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .content{
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            position:static;
+        }
+        .left-content{
+            width: 600px;
+            height: 600px;
+            margin-left:10px;
+            position: relative;
+        }
+        .right-content{
+            width: 600px;
+            height: 600px;
+        }
+        .small-img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            border: 3px solid orange;
+        }
+        .large-img{
+            
+            width: 300px;
+            height: 400px;
+            position: absolute;
+            top: 50px;
+            left:150px;
+            display: none;
+        }
+        .small-img:hover + .large-img{
+            display: block;
+        }
+        .small-img:hover{
+            border: 5px solid blue;
+        }
+        #small-img-1{
+            left:70px;
+        }
+        #small-img-2{
+            left:180px;
+        }
+        #small-img-3{
+            left:290px;
+        }
+        #small-img-4{
+            left:400px
+        }
+        #large-img-1{
+            display: block;
+        }
+        #buy-button{
+            width: 200px;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 19px;
+        }
+        #add-to-cart-button{
+            width: 250px;
+            background-color: white;
+            color: red;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: 2px solid red;
+            cursor: pointer;
+            font-size: 19px;
+            float: right;
+        }
+        #cart-count{
+            color:#FF0033;
+            position: absolute;
+            top:125px;
+            font-size:20px;
+        }
+        #cart-details{
+            border-collapse: collapse;
+            width: 350px;
+            display: none;
+            position: absolute;
+            margin-top: 100px;
+            right: 100px;
+            font-size: 20px;
+            background-color: #d1caca;
+        }
+        #cart-details th,
+        #cart-details td{
+            padding: 8px;
+            border: none;
+        }
+        #card-details tr :hover{
+            background-color: #ddd;
+        }
+        #card-details th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        #cart-details-2{
+            border-collapse: collapse;
+            width: 350px;
+            display: none;
+            position: absolute;
+            margin-top: 100px;
+            right: 100px;
+            font-size: 20px;
+            background-color: #d1caca;
+        }
+        #cart-details-2 th,
+        #cart-details-2 td{
+            padding: 8px;
+            border: none;
+        }
+        #card-details-2 tr :hover{
+            background-color: #ddd;
+        }
+        #card-details-2 th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .icon-cart{
+            background-color:yellow;
+            border: none;
+            font-size: 45px;
+            cursor: pointer;
+            color: #990000;
+        }
+        .remove-icon{
+            background-color: #a19f9f;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .thongso{
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        let carCount=0;
+        function addToCart(){
+            carCount++;
+            document.getElementById("cart-count").innerHTML=carCount;
+        }
+        function showCartDetails(){
+            if(carCount>=1){
+                document.getElementById("cart-details").style.display="block";
+            }else{
+                document.getElementById("cart-details-2").style.display="block"
+            }
+        }
+        function removeFromCart(){
+            carCount--;
+            document.getElementById("cart-count").innerHTML=carCount;
+            if(carCount<1){
+                document.getElementById("cart-details").style.display="none";
+            }
+        }
+        document.addEventListener("click",function(event){
+            if(event.target.id !=="cart-icon"){
+                document.getElementById("cart-details").style.display="none"
+            }
+        });
+        document.addEventListener("click",function(event){
+            if(event.target.id !=="cart-icon"){
+                document.getElementById("cart-details-2").style.display="none"
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img class="banner" src="anh/banner.jpg" alt="Banner">
+    <div class="menu">
+        <div class="menu-container">
+            <img class="logo" src="anh/logo.jpg" alt="Logo">
+             <a href="index.html"><i class="fa fa-home"></i></a>
+            <div class="search-container">
+                <input class="search-box" type="text" placeholder="Tìm kiếm...">
+                 <button class="search-button"><i class="fa fa-search"></i></button>
+            </div>
+           <a href="Login.html"><button class="login-button">Đăng nhập/Đăng ký</button></a>
+
+           <div id ="cart-icon"onclick="showCartDetails()"> 
+            <button class="icon-cart"><i class="fa fa-shopping-cart"></i></button>
+            <span id="cart-count">0</span>
+        </div>
+        <table id="cart-details">
+            <tr>
+                <td> <img src="anh/sanphamx1.jpg" alt="Product Image"width="50"> </td>
+                <td>Điện thoại SamSung</td>
+                <td>20.000.000đ</td>
+                <td>
+                    <button class="remove-icon"onclick="removeFromCart()">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <table id="cart-details-2">
+            <tr>
+               <td>Chưa có sản phẩm nào</td>
+            </tr>
+        </table>
+
+            <a href="ThongTinSinhVien.html"><i class="fa fa-user"></i><span class="info">Thông tin sinh viên</span></a>
+        </div>
+    </div>
+    </header>
+    <div class="content">
+        <div class="left-content">
+            <img class="small-img"id="small-img-1" src="anh/sanphamx1.jpg" alt="">
+            <img class="large-img"id="large-img-1" src="anh/sanphamx1.jpg" alt="">
+
+            <img class="small-img"id="small-img-2" src="anh/chitiet1.png" alt="">
+            <img class="large-img"id="large-img-2" src="anh/chitiet1.png" alt="">
+
+            <img class="small-img"id="small-img-3" src="anh/chitiet2.png" alt="">
+            <img class="large-img"id="large-img-3" src="anh/chitiet2.png" alt="">
+
+            <img class="small-img"id="small-img-4" src="anh/chitiet3.png" alt="">
+            <img class="large-img"id="large-img-4" src="anh/chitiet3.png" alt="">
+        </div>
+        <div class="right-content">
+            <h1>[XẢ Sốc] Điện thoại Samsung Galaxy 5G 256GB 
+            - Nguyên seal - BH 12 tháng chính hãng - Lỗi 1 đổi 1 trong 7 ngày
+            </h1>
+            <p style="font-size: 50px;">
+                <font color="red">20.000.000đ</font>
+            </p>
+          <ol class="thongso">
+            <li>Điện thoại Samsung Galaxy Z Flip3 5G 256GB  Nguyên Seal FULLBOX 100% Bảo hành 12 tháng</li>
+            <li>Thông số kỹ thuật:</li>
+            <li>Màn hình: Dynamic AMOLED 2XChính 6.7" & Phụ 1.9"Full HD+</li>
+            <li>Hệ điều hành: Android 11</li>
+            <li>Camera sau: 2 camera 12 MP</li>
+            <li>Camera trước: 10 MP</li>
+            <li>Chip: Snapdragon 888</li>
+            <li>RAM: 8 GB</li>
+            <li>Dung lượng lưu trữ: 256 GB</li>
+            <li>SIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G</li>
+            <li>Pin, Sạc: 3300 mAh15 W</li>
+          </ol>
+            <button onclick="addToCart()" id="buy-button">Mua hàng</button>
+            <button onclick="addToCart()" id="add-to-cart-button">Thêm vào giỏ hàng</button>
+           
+        </div>
+    </div>
+    <div class="footer">
+        <h4>Địa chỉ: 170, Lê Trọng Tấn, Tây Thạnh, Tân Phú</h4>
+        <p><b>Tổng đài hỗ trợ </b><i>(miễn phí)</i></p>
+        <p><b>Số điện thoại:</b> 08071133269</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .login-button {
+            background-color: rgb(33, 236, 50);
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .menu {
+            width:100%;
+            height: auto;
+            background-color: yellow;
+            font-size: 50px;
+            flex-basis: 100%;
+        }
+        .banner {
+            width: 100%;
+            height: 100px;
+        }
+        header{
+            width: 100%;
+            position: fixed;
+            top:0;
+            background-color: white;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .logo{
+            width: 130px;
+            height: 70px;
+            border-radius: 17px;
+        }
+        .search-box{
+            width: 380px;
+            height: 40px;
+            margin-bottom: 10px;
+            border-radius: 25px;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-button {
+            position: absolute;
+            width: 70px;
+            height: 42px;
+            top: 21px;
+            right: 0px;
+            border-radius: 25px;
+            background-color: red;
+        }
+        .info{
+            font-size: 20px;
+        }
+        .name{
+            font-size: 20px;
+        }
+        .product-container {
+            margin-top: 220px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            background-color: #FFFFFF;
+        }
+        .product {
+            font-family: 'Oswald', sans-serif;
+            width: 255px;
+            margin: 0 25px;
+            text-align: center;
+            border: 1px solid #FFFFFF;
+            box-shadow: 0px 0px 2px 2px #EEEEEE;
+            margin-left: 70px;
+            background-color:  #FFFFFF;
+        }
+        .product:first-child {
+            margin-left: 20x;
+        }
+        .product:last-child {
+            margin-right: 20px;
+        }
+        .rating .fa {
+            color: gold;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }  
+        .footer{
+            text-align: center;
+            background-color: yellow;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        .name:hover{
+            color: #FF9900;
+        }
+        @media  screen and (max-width:767px) {
+            product-container{
+                margin-top: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="banner" src="anh/banner.jpg" alt="Banner">
+        <div class="menu">
+            <div class="menu-container">
+                <img class="logo" src="anh/logo.jpg" alt="Logo">
+                 <a href="index.html"><i class="fa fa-home"></i></a>
+                <div class="search-container">
+                    <input class="search-box" type="text" placeholder="Tìm kiếm...">
+                     <button class="search-button"><i class="fa fa-search"></i></button>
+                </div>
+               <a href="Login.html"><button class="login-button">Đăng nhập/Đăng ký</button></a>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <a href="ThongTinSinhVien.html"><i class="fa fa-user"></i><span class="info">Thông tin sinh viên</span></a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="product-container">
+        <div class="product">
+            <img src="anh/sanphamx1.jpg" alt="Product 1">
+            <a class="name" href="ThongTinSanPham.html"><p>Điện thoại SamSung</p></a>
+            <p>Giá: 20.0000.000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(12k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="product">
+            <img class="img2" src="anh/sanphamx2.jpg" alt="Product 2">
+            <a class="name" href="ThongTinSanPham.html"><p>Điện thoại Oppo</p></a>
+            <p>Giá: 6.500.000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(5,6k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="product">
+            <img src="anh/sanpham3.jpg" alt="Product 2">
+            <a class="name" href="ThongTinSanPham.html"><p>Điện thoại Iphone</p></a>
+            <p>Giá: 23.000.0000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(24k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>
+        <div class="product">
+            <img src="anh/sanpham4.jpg" alt="Product 2">
+            <a class="name" href="ThongTinSanPham.html"><p>Laptop Lenovo</p></a>
+            <p>Giá: 14.999.000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(15k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="product">
+            <img src="anh/sanpham5.jpg" alt="Product 2">
+            <a class="name" href="ThongTinSanPham.html"><p>Laptop Asus</p></a>
+            <p>Giá: 23.400.000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(18k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="product">
+            <img src="anh/sanpham6.jpg" alt="Product 2">
+            <a class="name" href="ThongTinSanPham.html"><p>Camera không dây Copo</p></a>
+            <p>Giá: 1.200.000đ</p>
+            <div class="rating">
+                <i style="font-size: 13px;">Đánh giá(4,5k)</i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h4>Địa chỉ: 170, Lê Trọng Tấn, Tây Thạnh, Tân Phú</h4>
+        <p><b>Tổng đài hỗ trợ </b><i>(miễn phí)</i></p>
+        <p><b>Số điện thoại:</b> 08071133269</p>
+    </div>
+</body>
+</html>
